@@ -4,7 +4,7 @@ namespace Slothsoft\Lang;
 
 use Slothsoft\Farah\HTTPDocument;
 use Slothsoft\Core\Storage;
-use Slothsoft\Game\Dice;
+use Slothsoft\Core\Game\Dice;
 use DOMElement;
 use DOMXPath;
 use Exception;
