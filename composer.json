@@ -21,5 +21,11 @@
         "psr-4": {
             "Slothsoft\\Lang\\": "php/"
         }
-    }
+    },
+	"repositories": [
+        {
+            "type": "git",
+            "url": "https://github.com/Faulo/slothsoft-core"
+        }
+    ]
 }
