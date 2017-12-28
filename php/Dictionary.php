@@ -327,7 +327,7 @@ class Dictionary
         if (! isset($this->langPaths[$path])) {
             if (! is_file($path)) {
                 if (! is_dir(dirname($path))) {
-                    throw new Exception(self::ERR_NS_NOTFOUND, $namespace);
+                    throw new Exception(sprintf(self::ERR_NS_NOTFOUND, $namespace));
                 }
                 file_put_contents($path, sprintf('<?xml version="1.0" encoding="UTF-8"?>%1$s<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="%2$s">%1$s%1$s</html>', self::XPATH_EOL, $language));
             }
