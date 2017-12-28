@@ -48,7 +48,7 @@ class Dictionary
 
     protected $currentNS = 'core';
 
-    protected $langDocPath = 'mod/%s/lang.%s.xml';
+    protected $langDocPath = 'vendor/slothsoft/%s/lang.%s.xml';
 
     protected $langDocs = [];
 
