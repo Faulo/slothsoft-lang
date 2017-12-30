@@ -1,4 +1,4 @@
-Files and Resources and Hypertext
-=================================
+Language Module
+===============
 
-A Farah module.
+A Farah module that handles localization and translation stuff.
