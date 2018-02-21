@@ -2,7 +2,7 @@
 // © 2012 Daniel Schulz
 namespace Slothsoft\Lang;
 
-use Slothsoft\Farah\HTTPDocument;
+use Slothsoft\Core\DOMHelper;
 use Slothsoft\Core\Storage;
 use Slothsoft\Core\Game\Dice;
 use DOMElement;
@@ -225,13 +225,13 @@ class Vocabulary
             }
         }
         $doc = $tbodyNode->ownerDocument;
-        $parentNode = $doc->createElementNS(HTTPDocument::NS_HTML, 'tr');
+        $parentNode = $doc->createElementNS(DOMHelper::NS_HTML, 'tr');
         foreach ($wordList as $word) {
-            $node = $doc->createElementNS(HTTPDocument::NS_HTML, 'td');
+            $node = $doc->createElementNS(DOMHelper::NS_HTML, 'td');
             $node->appendChild($doc->createTextNode($word['name']));
             $node->setAttribute('audio', $word['audio']);
             $parentNode->appendChild($node);
-            $node = $doc->createElementNS(HTTPDocument::NS_HTML, 'td');
+            $node = $doc->createElementNS(DOMHelper::NS_HTML, 'td');
             $node->appendChild($doc->createTextNode($word['note']));
             $parentNode->appendChild($node);
         }

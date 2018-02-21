@@ -2,11 +2,10 @@
 // © 2012 Daniel Schulz
 namespace Slothsoft\Lang;
 
-use Slothsoft\Farah\HTTPDocument;
-use Slothsoft\Farah\Session;
+use Slothsoft\Core\DOMHelper;
 use Slothsoft\Core\FileSystem;
 use Slothsoft\Core\Storage;
-use Slothsoft\Core\DOMHelper;
+use Slothsoft\Farah\Session;
 
 /*
  * <translator>
@@ -612,7 +611,7 @@ class TranslatorJaEn extends Translator
                     $foundList[$key] = false;
                     $sessionChanged = true;
                     $uri = sprintf(self::PLAYER_URI, $arg[0], $arg[1]);
-                    $res = HTTPDocument::loadExternalHeader($uri, TIME_MONTH);
+                    $res = Storage::loadExternalHeader($uri, TIME_MONTH);
                     if (isset($res['content-type']) and $res['content-type'] === 'audio/mpeg') {
                         $length = (int) $res['content-length'];
                         if ($length > self::PLAYER_LENGTH_MIN and $length < self::PLAYER_LENGTH_MAX) {
@@ -635,30 +634,6 @@ class TranslatorJaEn extends Translator
         }
         
         return $ret;
-        
-        /*
-         * if ($kanji !== '') {
-         * $uri = sprintf(self::PLAYER_URI, $kana, '');
-         * $res = HTTPDocument::loadExternalHeader($uri, TIME_MONTH);
-         * if (isset($res['content-type']) and $res['content-type'] === 'audio/mpeg' and $res['content-length'] !== self::PLAYER_ERROR_LENGTH) {
-         * return $uri;
-         * }
-         * $uri = sprintf(self::PLAYER_URI, $kanji, '');
-         * $res = HTTPDocument::loadExternalHeader($uri, TIME_MONTH);
-         * if (isset($res['content-type']) and $res['content-type'] === 'audio/mpeg' and $res['content-length'] !== self::PLAYER_ERROR_LENGTH) {
-         * return $uri;
-         * }
-         * }
-         * //
-         */
-        // echo $kana . PHP_EOL . $kanji . PHP_EOL . PHP_EOL;
-        
-        $kana = urlencode($kana);
-        $kana = str_replace('%', '%25', $kana);
-        $kana .= '%26';
-        $kanji = urlencode($kanji);
-        $kanji = str_replace('%', '%25', $kanji);
-        return sprintf(self::PLAYER_URI_OLD, $kana, $kanji);
     }
 
     public static function lookupPlayerUri($sourceKana)
@@ -684,9 +659,9 @@ class TranslatorJaEn extends Translator
                 $form['dsrchtype'] = 'E';
                 $form['actionparam'] = '_0_?_0_';
                 
-                if ($tmpDoc = HTTPDocument::loadExternalDocument(self::PLAYER_URI_SEARCH, 'html', TIME_MONTH, $form, 'POST')) {
-                    $tmpPath = HTTPDocument::loadXPath($tmpDoc);
-                    
+                
+                
+                if ($tmpPath = Storage::loadExternalXPath(self::PLAYER_URI_SEARCH, TIME_MONTH, $form, ['method' => 'POST'])) {
                     $kanaList = [
                         $sourceKana,
                         $altKana
