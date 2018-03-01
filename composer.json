@@ -17,7 +17,7 @@
 	},
 	"autoload" : {
 		"psr-4" : {
-			"Slothsoft\\Lang\\" : "php/"
+			"Slothsoft\\Lang\\": "src/Slothsoft/Lang/"
 		}
 	}
 }
