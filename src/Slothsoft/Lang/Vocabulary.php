@@ -89,7 +89,7 @@ class Vocabulary
     public function setTime($time)
     {
         $this->currentTime = $time;
-        $this->currentDay = date(DATE_DATE, $this->currentTime);
+        $this->currentDay = date(DateTimeFormatter::FORMAT_DATE, $this->currentTime);
     }
 
     public function loadTable(DOMXPath $xpath, DOMElement $tableNode)
@@ -334,7 +334,7 @@ class Vocabulary
                 $kanji[] = '#kanji';
                 $uri = $kanjiUri . urlencode(implode(' ', $kanji));
                 
-                if ($xpath = Storage::loadExternalXPath($uri, TIME_MONTH)) {
+                if ($xpath = Storage::loadExternalXPath($uri, Seconds::MONTH)) {
                     $tmpList = $xpath->evaluate('.//*[@class = "kanji_result clearfix" or @class = "kanji details"]');
                     
                     if (! $tmpList->length) {
@@ -674,7 +674,7 @@ class Vocabulary
         $endDay = $this->currentDay;
         $max = 0;
         for ($time = $startTime; $time < $endTime; $startDay ++, $time = mktime(0, 0, 0, 1, $startDay, 2013)) {
-            $day = date(DATE_DATE, $time);
+            $day = date(DateTimeFormatter::FORMAT_DATE, $time);
             $node = $this->dataDoc->createElement('day');
             if ($day === $endDay) {
                 $node->setAttribute('now', '');

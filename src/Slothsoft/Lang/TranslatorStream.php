@@ -1,7 +1,7 @@
 <?php
 namespace Slothsoft\Lang;
 
-use Slothsoft\Farah\HTTPStream;
+use Slothsoft\Core\IO\HTTPStream;
 
 class TranslatorStream extends HTTPStream
 {

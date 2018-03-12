@@ -611,7 +611,7 @@ class TranslatorJaEn extends Translator
                     $foundList[$key] = false;
                     $sessionChanged = true;
                     $uri = sprintf(self::PLAYER_URI, $arg[0], $arg[1]);
-                    $res = Storage::loadExternalHeader($uri, TIME_MONTH);
+                    $res = Storage::loadExternalHeader($uri, Seconds::MONTH);
                     if (isset($res['content-type']) and $res['content-type'] === 'audio/mpeg') {
                         $length = (int) $res['content-length'];
                         if ($length > self::PLAYER_LENGTH_MIN and $length < self::PLAYER_LENGTH_MAX) {
@@ -661,7 +661,7 @@ class TranslatorJaEn extends Translator
                 
                 
                 
-                if ($tmpPath = Storage::loadExternalXPath(self::PLAYER_URI_SEARCH, TIME_MONTH, $form, ['method' => 'POST'])) {
+                if ($tmpPath = Storage::loadExternalXPath(self::PLAYER_URI_SEARCH, Seconds::MONTH, $form, ['method' => 'POST'])) {
                     $kanaList = [
                         $sourceKana,
                         $altKana
@@ -756,7 +756,7 @@ class TranslatorJaEn extends Translator
         
         for ($pageNo = 1; $pageNo < 10; $pageNo ++) {
             $uri = $this->getTranslationURL($letters, $pageNo);
-            $xpath = Storage::loadExternalXPath($uri, TIME_MONTH);
+            $xpath = Storage::loadExternalXPath($uri, Seconds::MONTH);
             if (! $xpath) {
                 break;
             }
