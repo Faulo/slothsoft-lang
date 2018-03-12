@@ -1,9 +1,11 @@
-<?php 
+<?php
 // © 2012 Daniel Schulz
 namespace Slothsoft\Lang;
 
 use Slothsoft\Core\DOMHelper;
 use Slothsoft\Core\Storage;
+use Slothsoft\Core\Calendar\DateTimeFormatter;
+use Slothsoft\Core\Calendar\Seconds;
 use Slothsoft\Core\Game\Dice;
 use DOMElement;
 use DOMXPath;

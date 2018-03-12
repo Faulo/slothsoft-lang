@@ -1,10 +1,11 @@
-<?php 
+<?php
 // © 2012 Daniel Schulz
 namespace Slothsoft\Lang;
 
 use Slothsoft\Core\DOMHelper;
 use Slothsoft\Core\FileSystem;
 use Slothsoft\Core\Storage;
+use Slothsoft\Core\Calendar\Seconds;
 use Slothsoft\Farah\Session;
 
 /*
@@ -659,9 +660,9 @@ class TranslatorJaEn extends Translator
                 $form['dsrchtype'] = 'E';
                 $form['actionparam'] = '_0_?_0_';
                 
-                
-                
-                if ($tmpPath = Storage::loadExternalXPath(self::PLAYER_URI_SEARCH, Seconds::MONTH, $form, ['method' => 'POST'])) {
+                if ($tmpPath = Storage::loadExternalXPath(self::PLAYER_URI_SEARCH, Seconds::MONTH, $form, [
+                    'method' => 'POST'
+                ])) {
                     $kanaList = [
                         $sourceKana,
                         $altKana
@@ -687,9 +688,11 @@ class TranslatorJaEn extends Translator
     const LOOKUP_URI = 'http://jisho.org/search/%s?page=%d';
 
     const PLAYER_LENGTH_MIN = 1000;
- // random??
+
+    // random??
     const PLAYER_LENGTH_MAX = 50000;
- // 52288; //"the audio for this file is currently unavailable."
+
+    // 52288; //"the audio for this file is currently unavailable."
     const PLAYER_URI = 'http://assets.languagepod101.com/dictionary/japanese/audiomp3.php?kana=%s&kanji=%s';
 
     const PLAYER_URI_OLD = 'http://www.csse.monash.edu.au/~jwb/audiock.swf?u=kana=%skanji=%s';
