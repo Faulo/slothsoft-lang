@@ -2,6 +2,7 @@
 // © 2012 Daniel Schulz
 namespace Slothsoft\Lang;
 
+use Slothsoft\Core\ServerEnvironment;
 use Slothsoft\Core\DOMHelper;
 use Slothsoft\Core\FileSystem;
 use Slothsoft\Core\Storage;
@@ -513,7 +514,7 @@ class TranslatorJaEn extends Translator
     {
         static $targetPath = null;
         if (! $targetPath) {
-            $targetPath = realpath(SERVER_ROOT . 'mod/slothsoft/res/vocab-ja');
+            $targetPath = realpath(ServerEnvironment::getRootDirectory() . 'mod/slothsoft/res/vocab-ja');
         }
         $ret = $uri;
         if ($targetPath) {
