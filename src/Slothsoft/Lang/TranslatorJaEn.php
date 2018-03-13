@@ -3,9 +3,9 @@ declare(strict_types = 1);
 // © 2012 Daniel Schulz
 namespace Slothsoft\Lang;
 
-use Slothsoft\Core\ServerEnvironment;
 use Slothsoft\Core\DOMHelper;
 use Slothsoft\Core\FileSystem;
+use Slothsoft\Core\ServerEnvironment;
 use Slothsoft\Core\Storage;
 use Slothsoft\Core\Calendar\Seconds;
 use Slothsoft\Farah\Session;
