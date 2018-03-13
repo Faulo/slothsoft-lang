@@ -1,4 +1,5 @@
 <?php
+declare(strict_types = 1);
 // © 2012 Daniel Schulz
 namespace Slothsoft\Lang;
 
