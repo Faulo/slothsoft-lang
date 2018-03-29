@@ -22,7 +22,7 @@
     },
     "autoload": {
         "files": [
-            "src\/registerModule.php"
+            "C:\\Webserver\\workspace\\slothsoft-lang\\src\\registerModule.php"
         ],
         "psr-0": {
             "Slothsoft\\Lang\\": "src\/"
