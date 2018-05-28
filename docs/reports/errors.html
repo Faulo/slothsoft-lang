@@ -1,0 +1,1097 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+    <meta charset="utf-8"/>
+    <title>     &raquo; Compilation errors
+</title>
+    <meta name="author" content=""/>
+    <meta name="description" content=""/>
+
+    <link href="../css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/prism.css" rel="stylesheet" media="all"/>
+    <link href="../css/template.css" rel="stylesheet" media="all"/>
+    
+    <!--[if lt IE 9]>
+    <script src="../js/html5.js"></script>
+    <![endif]-->
+    <script src="../js/jquery-1.11.0.min.js"></script>
+    <script src="../js/ui/1.10.4/jquery-ui.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/jquery.smooth-scroll.js"></script>
+    <script src="../js/prism.min.js"></script>
+    <!-- TODO: Add http://jscrollpane.kelvinluck.com/ to style the scrollbars for browsers not using webkit-->
+    
+    <link rel="shortcut icon" href="../images/favicon.ico"/>
+    <link rel="apple-touch-icon" href="../images/apple-touch-icon.png"/>
+    <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
+    <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
+</head>
+<body>
+
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                <i class="icon-ellipsis-vertical"></i>
+            </a>
+            <a class="brand" href="../index.html">API Documentation</a>
+
+            <div class="nav-collapse">
+                <ul class="nav pull-right">
+                                        <li class="dropdown">
+                        <a href="../index.html" class="dropdown-toggle" data-toggle="dropdown">
+                            API Documentation <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                                                        <li><a href="../namespaces/Slothsoft.html">\Slothsoft</a></li>
+                                                    </ul>
+                    </li>
+                                        <li class="dropdown" id="charts-menu">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Charts <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="../graphs/class.html">
+                                    <i class="icon-list-alt"></i>&#160;Class hierarchy diagram
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown" id="reports-menu">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Reports <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="../reports/errors.html">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <i class="icon-list-alt"></i>&#160;Errors <span class="label label-info pull-right">157</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../reports/markers.html">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <i class="icon-list-alt"></i>&#160;Markers <span class="label label-info pull-right">0</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../reports/deprecated.html">
+                                                                                                            <i class="icon-list-alt"></i>&#160;Deprecated <span class="label label-info pull-right">0</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--<div class="go_to_top">-->
+    <!--<a href="#___" style="color: inherit">Back to top&#160;&#160;<i class="icon-upload icon-white"></i></a>-->
+    <!--</div>-->
+</div>
+
+<div id="___" class="container-fluid">
+        <section class="row-fluid">
+        <div class="span2 sidebar">
+
+            <ul class="side-nav nav nav-list">
+                <li class="nav-header">Navigation</li>
+                                                                            <li><a href="#Slothsoft\Lang\TranslatorStream.php"><i class="icon-file"></i> Slothsoft\Lang\TranslatorStream.php</a></li>
+                                                                                                    <li><a href="#Slothsoft\Lang\Translator.php"><i class="icon-file"></i> Slothsoft\Lang\Translator.php</a></li>
+                                                                                                    <li><a href="#Slothsoft\Lang\TranslatorJaEn.php"><i class="icon-file"></i> Slothsoft\Lang\TranslatorJaEn.php</a></li>
+                                                                                                    <li><a href="#Slothsoft\Lang\Vocabulary.php"><i class="icon-file"></i> Slothsoft\Lang\Vocabulary.php</a></li>
+                                                                                                    <li><a href="#Slothsoft\Lang\Translation.php"><i class="icon-file"></i> Slothsoft\Lang\Translation.php</a></li>
+                                                                                                    <li><a href="#Slothsoft\Lang\GrammarJa.php"><i class="icon-file"></i> Slothsoft\Lang\GrammarJa.php</a></li>
+                                                                                                    <li><a href="#registerModule.php"><i class="icon-file"></i> registerModule.php</a></li>
+                                                                    </ul>
+        </div>
+
+        <div class="span10 offset2">
+            <ul class="breadcrumb">
+                <li><a href="../"><i class="icon-remove-sign"></i></a><span class="divider">\</span></li>
+                <li>Compilation Errors</li>
+            </ul>
+
+            
+                            <div class="package-contents">
+                                            <a name="Slothsoft\Lang\TranslatorStream.php" id="Slothsoft\Lang\TranslatorStream.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>
+                            Slothsoft\Lang\TranslatorStream.php
+                            <small style="float: right;padding-right: 10px;">7</small>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>0</td>
+                                        <td>No summary was found for this file</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>7</td>
+                                        <td>No summary for class \Slothsoft\Lang\TranslatorStream</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>12</td>
+                                        <td>Argument $translation is missing from the Docblock of __construct</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>12</td>
+                                        <td>No summary for method __construct()</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>17</td>
+                                        <td>No summary for method parseStatus()</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>26</td>
+                                        <td>No summary for method parseContent()</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>10</td>
+                                        <td>No summary for property $translation</td>
+                                    </tr>
+                                                            </tbody>
+                            </table>
+                        </div>
+                                    </div>
+                            <div class="package-contents">
+                                            <a name="Slothsoft\Lang\Translator.php" id="Slothsoft\Lang\Translator.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>
+                            Slothsoft\Lang\Translator.php
+                            <small style="float: right;padding-right: 10px;">16</small>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>0</td>
+                                        <td>No summary was found for this file</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>5</td>
+                                        <td>No summary for class \Slothsoft\Lang\Translator</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>8</td>
+                                        <td>Argument $sourceLang is missing from the Docblock of getTranslator</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>8</td>
+                                        <td>Argument $targetLang is missing from the Docblock of getTranslator</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>8</td>
+                                        <td>No summary for method getTranslator()</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>29</td>
+                                        <td>Argument $options is missing from the Docblock of setOptions</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>29</td>
+                                        <td>No summary for method setOptions()</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>38</td>
+                                        <td>Argument $word is missing from the Docblock of translateWord</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>38</td>
+                                        <td>Argument $nexWord is missing from the Docblock of translateWord</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>38</td>
+                                        <td>No summary for method translateWord()</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>40</td>
+                                        <td>Argument $letters is missing from the Docblock of getTranslationURL</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>40</td>
+                                        <td>Argument $pageNo is missing from the Docblock of getTranslationURL</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>40</td>
+                                        <td>No summary for method getTranslationURL()</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>42</td>
+                                        <td>Argument $wordList is missing from the Docblock of createTranslation</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>42</td>
+                                        <td>No summary for method createTranslation()</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>27</td>
+                                        <td>No summary for property $otions</td>
+                                    </tr>
+                                                            </tbody>
+                            </table>
+                        </div>
+                                    </div>
+                            <div class="package-contents">
+                                            <a name="Slothsoft\Lang\TranslatorJaEn.php" id="Slothsoft\Lang\TranslatorJaEn.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>
+                            Slothsoft\Lang\TranslatorJaEn.php
+                            <small style="float: right;padding-right: 10px;">30</small>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>0</td>
+                                        <td>No summary was found for this file</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>46</td>
+                                        <td>No summary for class \Slothsoft\Lang\TranslatorJaEn</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>490</td>
+                                        <td>Argument $kanaStr is missing from the Docblock of toHiragana</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>490</td>
+                                        <td>No summary for method toHiragana()</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>496</td>
+                                        <td>Argument $kanaStr is missing from the Docblock of toKatakana</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>496</td>
+                                        <td>No summary for method toKatakana()</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>502</td>
+                                        <td>Argument $kanaStr is missing from the Docblock of toLatin</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>502</td>
+                                        <td>No summary for method toLatin()</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>508</td>
+                                        <td>Argument $kanaStr is missing from the Docblock of fromLatin</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>508</td>
+                                        <td>No summary for method fromLatin()</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>514</td>
+                                        <td>Argument $uri is missing from the Docblock of downloadPlayerURI</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>514</td>
+                                        <td>No summary for method downloadPlayerURI()</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>557</td>
+                                        <td>Argument $kana is missing from the Docblock of getPlayerURI</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>557</td>
+                                        <td>Argument $kanji is missing from the Docblock of getPlayerURI</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>557</td>
+                                        <td>No summary for method getPlayerURI()</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>642</td>
+                                        <td>Argument $sourceKana is missing from the Docblock of lookupPlayerUri</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>642</td>
+                                        <td>No summary for method lookupPlayerUri()</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>716</td>
+                                        <td>No summary for method __construct()</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>721</td>
+                                        <td>Argument $letters is missing from the Docblock of getTranslationURL</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>721</td>
+                                        <td>Argument $pageNo is missing from the Docblock of getTranslationURL</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>721</td>
+                                        <td>No summary for method getTranslationURL()</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>732</td>
+                                        <td>Argument $word is missing from the Docblock of translateWord</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>732</td>
+                                        <td>Argument $nextWord is missing from the Docblock of translateWord</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>732</td>
+                                        <td>No summary for method translateWord()</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>752</td>
+                                        <td>Argument $word is missing from the Docblock of lookupWord</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>752</td>
+                                        <td>No summary for method lookupWord()</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>49</td>
+                                        <td>No summary for property $hiraganaMap</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>159</td>
+                                        <td>No summary for property $katakanaMap</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>272</td>
+                                        <td>No summary for property $latinHiraganaMap</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>380</td>
+                                        <td>No summary for property $hiraganaLatinMap</td>
+                                    </tr>
+                                                            </tbody>
+                            </table>
+                        </div>
+                                    </div>
+                            <div class="package-contents">
+                                            <a name="Slothsoft\Lang\Vocabulary.php" id="Slothsoft\Lang\Vocabulary.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>
+                            Slothsoft\Lang\Vocabulary.php
+                            <small style="float: right;padding-right: 10px;">73</small>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>0</td>
+                                        <td>No summary was found for this file</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>29</td>
+                                        <td>No summary for class \Slothsoft\Lang\Vocabulary</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>86</td>
+                                        <td>Argument $dataPath is missing from the Docblock of __construct</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>86</td>
+                                        <td>No summary for method __construct()</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>92</td>
+                                        <td>Argument $time is missing from the Docblock of setTime</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>92</td>
+                                        <td>No summary for method setTime()</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>98</td>
+                                        <td>Argument $xpath is missing from the Docblock of loadTable</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>98</td>
+                                        <td>Argument $tableNode is missing from the Docblock of loadTable</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>98</td>
+                                        <td>No summary for method loadTable()</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>123</td>
+                                        <td>Argument $xpath is missing from the Docblock of loadRow</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>123</td>
+                                        <td>Argument $rowNode is missing from the Docblock of loadRow</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>123</td>
+                                        <td>No summary for method loadRow()</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>151</td>
+                                        <td>Argument $data is missing from the Docblock of loadWord</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>151</td>
+                                        <td>No summary for method loadWord()</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>210</td>
+                                        <td>Argument $lang is missing from the Docblock of hasVocable</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>210</td>
+                                        <td>Argument $name is missing from the Docblock of hasVocable</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>210</td>
+                                        <td>Argument $note is missing from the Docblock of hasVocable</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>210</td>
+                                        <td>No summary for method hasVocable()</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>216</td>
+                                        <td>Argument $tbodyNode is missing from the Docblock of addVocable</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>216</td>
+                                        <td>Argument $wordList is missing from the Docblock of addVocable</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>216</td>
+                                        <td>No summary for method addVocable()</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>246</td>
+                                        <td>Argument $xpath is missing from the Docblock of loadKanjiDocument</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>246</td>
+                                        <td>No summary for method loadKanjiDocument()</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>303</td>
+                                        <td>Argument $text is missing from the Docblock of loadKanjiText</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>303</td>
+                                        <td>No summary for method loadKanjiText()</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>400</td>
+                                        <td>No summary for method output()</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>405</td>
+                                        <td>No summary for method getDocument()</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>410</td>
+                                        <td>Argument $text is missing from the Docblock of setWordFilter</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>410</td>
+                                        <td>No summary for method setWordFilter()</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>415</td>
+                                        <td>Argument $list is missing from the Docblock of setProgressList</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>415</td>
+                                        <td>No summary for method setProgressList()</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>421</td>
+                                        <td>No summary for method getProgressList()</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>426</td>
+                                        <td>Argument $list is missing from the Docblock of setDateList</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>426</td>
+                                        <td>No summary for method setDateList()</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>431</td>
+                                        <td>No summary for method getDateList()</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>436</td>
+                                        <td>No summary for method calcProgress()</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>451</td>
+                                        <td>Argument $language is missing from the Docblock of generateTestResult</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>451</td>
+                                        <td>Argument $testList is missing from the Docblock of generateTestResult</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>451</td>
+                                        <td>No summary for method generateTestResult()</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>496</td>
+                                        <td>Argument $language is missing from the Docblock of generateTest</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>496</td>
+                                        <td>Argument $questionCount is missing from the Docblock of generateTest</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>496</td>
+                                        <td>Argument $questionType is missing from the Docblock of generateTest</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>496</td>
+                                        <td>Argument $selectCount is missing from the Docblock of generateTest</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>496</td>
+                                        <td>No summary for method generateTest()</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>671</td>
+                                        <td>No summary for method generateTestDates()</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>707</td>
+                                        <td>Argument $lang is missing from the Docblock of buildIdString</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>707</td>
+                                        <td>Argument $name is missing from the Docblock of buildIdString</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>707</td>
+                                        <td>Argument $note is missing from the Docblock of buildIdString</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>707</td>
+                                        <td>No summary for method buildIdString()</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>716</td>
+                                        <td>Argument $read is missing from the Docblock of kanjiParseReading</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>716</td>
+                                        <td>No summary for method kanjiParseReading()</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>732</td>
+                                        <td>Argument $spell is missing from the Docblock of kanjiParseSpelling</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>732</td>
+                                        <td>No summary for method kanjiParseSpelling()</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>745</td>
+                                        <td>Argument $read is missing from the Docblock of kanjiParseTranslation</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>745</td>
+                                        <td>No summary for method kanjiParseTranslation()</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>760</td>
+                                        <td>Argument $str is missing from the Docblock of arrayExplode</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>760</td>
+                                        <td>No summary for method arrayExplode()</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>792</td>
+                                        <td>Argument $randomArr is missing from the Docblock of arrayRandomElement</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>792</td>
+                                        <td>Argument $excludeList is missing from the Docblock of arrayRandomElement</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>792</td>
+                                        <td>No summary for method arrayRandomElement()</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>805</td>
+                                        <td>Argument $list is missing from the Docblock of arrayShuffle</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>805</td>
+                                        <td>No summary for method arrayShuffle()</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>64</td>
+                                        <td>No summary for property $dataPath</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>66</td>
+                                        <td>No summary for property $dataDoc</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>68</td>
+                                        <td>No summary for property $commonWords</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>70</td>
+                                        <td>No summary for property $currentTime</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>72</td>
+                                        <td>No summary for property $currentDay</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>74</td>
+                                        <td>No summary for property $wordList</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>76</td>
+                                        <td>No summary for property $wordFilter</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>78</td>
+                                        <td>No summary for property $progressList</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>80</td>
+                                        <td>No summary for property $dateList</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>82</td>
+                                        <td>No summary for property $firstLang</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>84</td>
+                                        <td>No summary for property $secondLang</td>
+                                    </tr>
+                                                            </tbody>
+                            </table>
+                        </div>
+                                    </div>
+                            <div class="package-contents">
+                                            <a name="Slothsoft\Lang\Translation.php" id="Slothsoft\Lang\Translation.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>
+                            Slothsoft\Lang\Translation.php
+                            <small style="float: right;padding-right: 10px;">13</small>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>0</td>
+                                        <td>No summary was found for this file</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>8</td>
+                                        <td>No summary for class \Slothsoft\Lang\Translation</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>25</td>
+                                        <td>Argument $translator is missing from the Docblock of __construct</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>25</td>
+                                        <td>Argument $sentence is missing from the Docblock of __construct</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>25</td>
+                                        <td>No summary for method __construct()</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>34</td>
+                                        <td>No summary for method hasWords()</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>39</td>
+                                        <td>No summary for method nextWord()</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>53</td>
+                                        <td>No summary for method asArray()</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>64</td>
+                                        <td>Argument $dataDoc is missing from the Docblock of asNode</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>64</td>
+                                        <td>No summary for method asNode()</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>115</td>
+                                        <td>No summary for method asStream()</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>21</td>
+                                        <td>No summary for property $sentenceStack</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>23</td>
+                                        <td>No summary for property $ownerTranslator</td>
+                                    </tr>
+                                                            </tbody>
+                            </table>
+                        </div>
+                                    </div>
+                            <div class="package-contents">
+                                            <a name="Slothsoft\Lang\GrammarJa.php" id="Slothsoft\Lang\GrammarJa.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>
+                            Slothsoft\Lang\GrammarJa.php
+                            <small style="float: right;padding-right: 10px;">17</small>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>0</td>
+                                        <td>No summary was found for this file</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>10</td>
+                                        <td>No summary for class \Slothsoft\Lang\GrammarJa</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>25</td>
+                                        <td>No summary for method __construct()</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>28</td>
+                                        <td>Argument $grammarDoc is missing from the Docblock of init</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>28</td>
+                                        <td>No summary for method init()</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>66</td>
+                                        <td>No summary for method getConjugationFormList()</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>77</td>
+                                        <td>Argument $wordNode is missing from the Docblock of conjugateWord</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>77</td>
+                                        <td>No summary for method conjugateWord()</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>135</td>
+                                        <td>Argument $kanji is missing from the Docblock of guessConjugationType</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>135</td>
+                                        <td>Argument $kana is missing from the Docblock of guessConjugationType</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>135</td>
+                                        <td>No summary for method guessConjugationType()</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>13</td>
+                                        <td>No summary for property $doc</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>15</td>
+                                        <td>No summary for property $xpath</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>17</td>
+                                        <td>No summary for property $rootNode</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>19</td>
+                                        <td>No summary for property $conjugationTypeList</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>21</td>
+                                        <td>No summary for property $conjugationBaseList</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>23</td>
+                                        <td>No summary for property $conjugationExceptionList</td>
+                                    </tr>
+                                                            </tbody>
+                            </table>
+                        </div>
+                                    </div>
+                            <div class="package-contents">
+                                            <a name="registerModule.php" id="registerModule.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>
+                            registerModule.php
+                            <small style="float: right;padding-right: 10px;">1</small>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>0</td>
+                                        <td>No summary was found for this file</td>
+                                    </tr>
+                                                            </tbody>
+                            </table>
+                        </div>
+                                    </div>
+                    </div>
+    </section>
+
+    <footer class="row-fluid">
+        <section class="span10 offset2">
+            <section class="row-fluid">
+                <section class="span10 offset1">
+                    <section class="row-fluid footer-sections">
+                        <section class="span4">
+                                                        <h1><i class="icon-code"></i></h1>
+                            <div>
+                                <ul>
+                                                                            <li><a href="../namespaces/Slothsoft.html">\Slothsoft</a></li>
+                                                                    </ul>
+                            </div>
+                        </section>
+                        <section class="span4">
+                                                        <h1><i class="icon-bar-chart"></i></h1>
+                            <div>
+                                <ul>
+                                    <li><a href="../graphs/class.html">Class Hierarchy Diagram</a></li>
+                                </ul>
+                            </div>
+                        </section>
+                        <section class="span4">
+                                                        <h1><i class="icon-pushpin"></i></h1>
+                            <div>
+                                <ul>
+                                    <li><a href="../reports/errors.html">Errors</a></li>
+                                    <li><a href="../reports/markers.html">Markers</a></li>
+                                </ul>
+                            </div>
+                        </section>
+                    </section>
+                </section>
+            </section>
+            <section class="row-fluid">
+                <section class="span10 offset1">
+                    <hr />
+                    Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and authored
+                    on May 28th, 2018 at 17:18.
+                </section>
+            </section>
+        </section>
+    </footer>
+</div>
+
+</body>
+</html>
