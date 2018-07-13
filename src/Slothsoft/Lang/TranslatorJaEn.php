@@ -515,7 +515,7 @@ class TranslatorJaEn extends Translator
     {
         static $targetPath = null;
         if (! $targetPath) {
-            $targetPath = realpath(ServerEnvironment::getRootDirectory() . 'mod/slothsoft/res/vocab-ja');
+            $targetPath = realpath(ServerEnvironment::getRootDirectory() . '/../../mod/slothsoft/res/vocab-ja');
         }
         $ret = $uri;
         if ($targetPath) {
