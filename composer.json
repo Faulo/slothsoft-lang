@@ -1,7 +1,7 @@
 {
     "name": "slothsoft/lang",
     "description": "A Farah module that handles localization and translation stuff.",
-    "license": "GPL",
+    "license": "WTFPL",
     "authors": [
         {
             "name": "Daniel Schulz",
