@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <buildpath>
-	
-	
 	<buildpathentry kind="con" path="org.eclipse.php.core.LANGUAGE"/>
 	<buildpathentry kind="src" path="src">
 		<attributes>
@@ -218,11 +216,6 @@
 			<attribute name="composer" value="vendor"/>
 		</attributes>
 	</buildpathentry>
-	<buildpathentry kind="src" path="vendor/slothsoft/blob/scripts">
-		<attributes>
-			<attribute name="composer" value="vendor"/>
-		</attributes>
-	</buildpathentry>
 	<buildpathentry kind="src" path="vendor/slothsoft/blob/src">
 		<attributes>
 			<attribute name="composer" value="vendor"/>
@@ -239,6 +232,11 @@
 		</attributes>
 	</buildpathentry>
 	<buildpathentry kind="src" path="vendor/slothsoft/farah/src">
+		<attributes>
+			<attribute name="composer" value="vendor"/>
+		</attributes>
+	</buildpathentry>
+	<buildpathentry kind="src" path="vendor/slothsoft/farah/src-pthreads">
 		<attributes>
 			<attribute name="composer" value="vendor"/>
 		</attributes>
