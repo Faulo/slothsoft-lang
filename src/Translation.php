@@ -5,39 +5,35 @@ namespace Slothsoft\Lang;
 use Slothsoft\Core\DOMHelper;
 use DOMDocument;
 
-class Translation
-{
-
+class Translation {
+    
     const ELE_ROOT = 'translator';
-
+    
     const ELE_TEXT = 'translation';
-
+    
     const ELE_WORD = 'word';
-
+    
     const ATTR_WORDS = 'text';
-
+    
     const ATTR_SYLLABLECOUNT = 'syllables';
-
+    
     protected $sentenceStack = [];
-
+    
     protected $ownerTranslator;
-
-    public function __construct(Translator $translator, array $sentence)
-    {
+    
+    public function __construct(Translator $translator, array $sentence) {
         $this->ownerTranslator = $translator;
         // $this->sentenceStack = $sentence;
         foreach ($sentence as $wordList) {
             $this->sentenceStack[] = $wordList['latin'];
         }
     }
-
-    public function hasWords()
-    {
+    
+    public function hasWords() {
         return (bool) count($this->sentenceStack);
     }
-
-    public function nextWord()
-    {
+    
+    public function nextWord() {
         $ret = null;
         if (count($this->sentenceStack)) {
             $word = array_shift($this->sentenceStack);
@@ -49,9 +45,8 @@ class Translation
         }
         return $ret;
     }
-
-    public function asArray()
-    {
+    
+    public function asArray() {
         $ret = [];
         while ($this->hasWords()) {
             if ($word = $this->nextWord()) {
@@ -60,9 +55,8 @@ class Translation
         }
         return $ret;
     }
-
-    public function asNode(DOMDocument $dataDoc)
-    {
+    
+    public function asNode(DOMDocument $dataDoc) {
         
         // my_dump($translationList);
         $dom = new DOMHelper();
@@ -111,9 +105,8 @@ class Translation
         
         // return $this->ownerTranslator->createTranslationElement($dataDoc, $this->asArray());
     }
-
-    public function asStream()
-    {
+    
+    public function asStream() {
         return new TranslatorStream($this);
     }
 }

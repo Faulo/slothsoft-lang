@@ -43,9 +43,8 @@ use Slothsoft\Farah\Session;
  * <translator>
  * //
  */
-class TranslatorJaEn extends Translator
-{
-
+class TranslatorJaEn extends Translator {
+    
     protected static $hiraganaMap = [
         'あ' => 'ア',
         'ば' => 'バ',
@@ -155,7 +154,7 @@ class TranslatorJaEn extends Translator
         'づ' => 'ズ',
         'ん' => 'ン'
     ];
-
+    
     protected static $katakanaMap = [
         'ア' => 'あ',
         'バ' => 'ば',
@@ -268,7 +267,7 @@ class TranslatorJaEn extends Translator
         'ヅ' => 'ず',
         'ン' => 'ん'
     ];
-
+    
     protected static $latinHiraganaMap = [
         'a' => 'あ',
         'i' => 'い',
@@ -376,7 +375,7 @@ class TranslatorJaEn extends Translator
         'pyo' => 'ぴょ',
         'hye' => 'ひぇ'
     ];
-
+    
     protected static $hiraganaLatinMap = [
         'あ' => 'a',
         'い' => 'i',
@@ -486,33 +485,28 @@ class TranslatorJaEn extends Translator
         'ぴょ' => 'pyo',
         'ひぇ' => 'hye'
     ];
-
-    public static function toHiragana($kanaStr)
-    {
+    
+    public static function toHiragana($kanaStr) {
         $kanaStr = strtr($kanaStr, self::$katakanaMap);
         return $kanaStr;
     }
-
-    public static function toKatakana($kanaStr)
-    {
+    
+    public static function toKatakana($kanaStr) {
         $kanaStr = strtr($kanaStr, self::$hiraganaMap);
         return $kanaStr;
     }
-
-    public static function toLatin($kanaStr)
-    {
+    
+    public static function toLatin($kanaStr) {
         $kanaStr = strtr($kanaStr, self::$hiraganaLatinMap);
         return $kanaStr;
     }
-
-    public static function fromLatin($kanaStr)
-    {
+    
+    public static function fromLatin($kanaStr) {
         $kanaStr = strtr($kanaStr, self::$latinHiraganaMap);
         return $kanaStr;
     }
-
-    public static function downloadPlayerURI($uri)
-    {
+    
+    public static function downloadPlayerURI($uri) {
         static $targetPath = null;
         if (! $targetPath) {
             $targetPath = realpath(ServerEnvironment::getRootDirectory() . '/../../mod/slothsoft/res/vocab-ja');
@@ -553,9 +547,8 @@ class TranslatorJaEn extends Translator
         }
         return $ret;
     }
-
-    public static function getPlayerURI($kana, $kanji)
-    {
+    
+    public static function getPlayerURI($kana, $kanji) {
         static $sessionKey = 'japanese-audio-list';
         static $session = null;
         static $foundList = null;
@@ -638,9 +631,8 @@ class TranslatorJaEn extends Translator
         
         return $ret;
     }
-
-    public static function lookupPlayerUri($sourceKana)
-    {
+    
+    public static function lookupPlayerUri($sourceKana) {
         static $uriList = [];
         $sourceKana = str_replace([
             '-',
@@ -686,40 +678,38 @@ class TranslatorJaEn extends Translator
         }
         return $uriList[$sourceKana];
     }
-
+    
     const LOOKUP_URI = 'http://jisho.org/search/%s?page=%d';
-
+    
     const PLAYER_LENGTH_MIN = 1000;
-
+    
     // random??
     const PLAYER_LENGTH_MAX = 50000;
-
+    
     // 52288; //"the audio for this file is currently unavailable."
     const PLAYER_URI = 'http://assets.languagepod101.com/dictionary/japanese/audiomp3.php?kana=%s&kanji=%s';
-
+    
     const PLAYER_URI_OLD = 'http://www.csse.monash.edu.au/~jwb/audiock.swf?u=kana=%skanji=%s';
-
+    
     const PLAYER_URI_BASE = 'http://www.csse.monash.edu.au/~jwb/audiock.swf?u=';
-
+    
     const PLAYER_URI_SEARCH = 'http://www.csse.monash.edu.au/~jwb/cgi-bin/wwwjdic.cgi?1E';
-
+    
     const ELE_ROOT = 'translator';
-
+    
     const ELE_TEXT = 'translation';
-
+    
     const ELE_WORD = 'word';
-
+    
     const ATTR_WORDS = 'text';
-
+    
     const ATTR_SYLLABLECOUNT = 'syllables';
-
-    public function __construct()
-    {
+    
+    public function __construct() {
         $this->options['commonOnly'] = true;
     }
-
-    protected function getTranslationURL($letters, $pageNo)
-    {
+    
+    protected function getTranslationURL($letters, $pageNo) {
         $tags = [];
         $tags[] = $letters;
         $tags[] = '#words';
@@ -728,9 +718,8 @@ class TranslatorJaEn extends Translator
         }
         return sprintf(self::LOOKUP_URI, rawurlencode(implode(' ', $tags)), $pageNo);
     }
-
-    public function translateWord($word, &$nextWord)
-    {
+    
+    public function translateWord($word, &$nextWord) {
         $ret = null;
         for ($wordLength = count($word); $wordLength > 0; $wordLength --) {
             $tryWord = array_slice($word, 0, $wordLength);
@@ -748,9 +737,8 @@ class TranslatorJaEn extends Translator
         }
         return $ret;
     }
-
-    protected function lookupWord($word)
-    {
+    
+    protected function lookupWord($word) {
         $letters = implode('', $word);
         $hasTranslation = false;
         

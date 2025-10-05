@@ -26,77 +26,73 @@ use Exception;
 
 // http://www.csse.monash.edu.au/~jwb/audiock.swf?u=kana=%25E3%2581%2594%26kanji=%25E8%25AA%259E
 // http://assets.languagepod101.com/dictionary/japanese/audiomp3.php?kana=%E3%81%94&kanji=%E8%AA%9E
-class Vocabulary
-{
-
+class Vocabulary {
+    
     const TEST_TYPE_CHOICE = 'choice';
-
+    
     const TEST_TYPE_TYPING = 'typing';
-
+    
     const TEST_TYPE_CLICK = 'click';
-
+    
     const ELE_ROOT = 'vocabulary';
-
+    
     const ELE_GROUP = 'group';
-
+    
     const ELE_VOCABLE = 'vocable';
-
+    
     const ELE_REPOSITORY = 'repository';
-
+    
     const ELE_WORD = 'word';
-
+    
     const ELE_READING = 'reading';
-
+    
     const ELE_SPELLING = 'radical';
-
+    
     const ATTR_ID = 'id';
-
+    
     const ATTR_NAME = 'name';
-
+    
     const ATTR_NOTE = 'note';
-
+    
     const ATTR_PLAYER = 'player-uri';
-
+    
     const ATTR_TYPE = 'type';
-
+    
     const ATTR_LANG = 'xml:lang';
-
+    
     protected $dataPath;
-
+    
     protected $dataDoc;
-
+    
     public $commonWords = true;
-
+    
     protected $currentTime;
-
+    
     protected $currentDay;
-
+    
     protected $wordList = [];
-
+    
     protected $wordFilter = null;
-
+    
     protected $progressList = [];
-
+    
     protected $dateList = [];
-
+    
     protected $firstLang;
-
+    
     protected $secondLang;
-
-    public function __construct(DOMXPath $dataPath)
-    {
+    
+    public function __construct(DOMXPath $dataPath) {
         $this->dataPath = $dataPath;
         $this->dataDoc = $this->dataPath->document;
     }
-
-    public function setTime($time)
-    {
+    
+    public function setTime($time) {
         $this->currentTime = $time;
         $this->currentDay = date(DateTimeFormatter::FORMAT_DATE, $this->currentTime);
     }
-
-    public function loadTable(DOMXPath $xpath, DOMElement $tableNode)
-    {
+    
+    public function loadTable(DOMXPath $xpath, DOMElement $tableNode) {
         $retNode = $this->dataDoc->createElement(self::ELE_ROOT);
         $this->firstLang = $xpath->evaluate('string(.//*[@xml:lang][1]/@xml:lang)', $tableNode);
         $this->secondLang = $xpath->evaluate('string(.//*[@xml:lang][2]/@xml:lang)', $tableNode);
@@ -119,9 +115,8 @@ class Vocabulary
         $this->calcProgress();
         return $retNode;
     }
-
-    public function loadRow(DOMXPath $xpath, DOMElement $rowNode)
-    {
+    
+    public function loadRow(DOMXPath $xpath, DOMElement $rowNode) {
         $exprList = [
             [
                 'name' => 'normalize-space(html:td[1])',
@@ -147,9 +142,8 @@ class Vocabulary
         }
         return $wordNode;
     }
-
-    public function loadWord(array $data)
-    {
+    
+    public function loadWord(array $data) {
         $data['name'] = $this->arrayExplode($data['name']);
         $data['note'] = $this->arrayExplode($data['note']);
         // $data['note'] = trim(reset($data['note']));
@@ -206,15 +200,13 @@ class Vocabulary
         $this->wordList[$id] = $retNode;
         return $retNode;
     }
-
-    public function hasVocable($lang, $name, $note)
-    {
+    
+    public function hasVocable($lang, $name, $note) {
         $id = $this->buildIdString($lang, $name, $note);
         return isset($this->wordList[$id]);
     }
-
-    public function addVocable(DOMElement $tbodyNode, array $wordList)
-    {
+    
+    public function addVocable(DOMElement $tbodyNode, array $wordList) {
         foreach ($wordList as $word) {
             foreach ($word as &$val) {
                 $val = trim($val);
@@ -242,9 +234,8 @@ class Vocabulary
         $tbodyNode->insertBefore($textNode, $tbodyNode->lastChild);
         $tbodyNode->insertBefore($parentNode, $tbodyNode->lastChild);
     }
-
-    public function loadKanjiDocument(DOMXPath $xpath)
-    {
+    
+    public function loadKanjiDocument(DOMXPath $xpath) {
         $retNode = $this->dataDoc->createElement(self::ELE_ROOT);
         $groupNode = $this->dataDoc->createElement(self::ELE_GROUP);
         $groupNode->setAttribute(self::ATTR_NAME, 'kanji');
@@ -299,9 +290,8 @@ class Vocabulary
         $this->calcProgress();
         return $retNode;
     }
-
-    public function loadKanjiText($text)
-    {
+    
+    public function loadKanjiText($text) {
         // $kanjiUri = 'http://jisho.org/kanji/details/';
         $kanjiUri = 'http://jisho.org/search/';
         $retNode = $this->dataDoc->createElement(self::ELE_ROOT);
@@ -316,7 +306,7 @@ class Vocabulary
                 'reading' => 'normalize-space(.//*[@class = "kanji-details__main-readings"])',
                 'on' => '""', // './/*[@class = "dictionary_entry kun_yomi"]//html:a',
                 'kun' => '""', // './/*[@class = "dictionary_entry on_yomi"]//html:a',
-                               // 'spelling' => 'normalize-space(.//html:div[@class = "connections"])',
+                                // 'spelling' => 'normalize-space(.//html:div[@class = "connections"])',
                 'lang' => '"ja-jp"',
                 'player' => '"?"'
             ],
@@ -396,45 +386,37 @@ class Vocabulary
         $this->calcProgress();
         return $retNode;
     }
-
-    public function output()
-    {
+    
+    public function output() {
         output($this->dataDoc);
     }
-
-    public function getDocument()
-    {
+    
+    public function getDocument() {
         return $this->dataDoc;
     }
-
-    public function setWordFilter($text = null)
-    {
+    
+    public function setWordFilter($text = null) {
         $this->wordFilter = $text;
     }
-
-    public function setProgressList(array $list)
-    {
+    
+    public function setProgressList(array $list) {
         $this->progressList = $list;
         $this->calcProgress();
     }
-
-    public function getProgressList()
-    {
+    
+    public function getProgressList() {
         return $this->progressList;
     }
-
-    public function setDateList(array $list)
-    {
+    
+    public function setDateList(array $list) {
         $this->dateList = $list;
     }
-
-    public function getDateList()
-    {
+    
+    public function getDateList() {
         return $this->dateList;
     }
-
-    protected function calcProgress()
-    {
+    
+    protected function calcProgress() {
         foreach ($this->wordList as $id => $wordNode) {
             if (isset($this->progressList[$id])) {
                 $wrong = $this->progressList[$id][0];
@@ -447,9 +429,8 @@ class Vocabulary
             $wordNode->setAttribute('user-correct', $correct);
         }
     }
-
-    public function generateTestResult($language, array $testList)
-    {
+    
+    public function generateTestResult($language, array $testList) {
         $retNode = $this->dataDoc->createElement('testResult');
         $retNode->setAttribute(self::ATTR_LANG, $language);
         foreach ($testList as $questionId => $answerId) {
@@ -492,9 +473,8 @@ class Vocabulary
         $this->calcProgress();
         return $retNode;
     }
-
-    public function generateTest($language, $questionCount = null, $questionType = null, $selectCount = 6)
-    {
+    
+    public function generateTest($language, $questionCount = null, $questionType = null, $selectCount = 6) {
         if (! $questionType) {
             $questionType = self::TEST_TYPE_CHOICE;
         }
@@ -667,9 +647,8 @@ class Vocabulary
         }
         return $retNode;
     }
-
-    public function generateTestDates()
-    {
+    
+    public function generateTestDates() {
         $retNode = $this->dataDoc->createElement('testDates');
         $startDay = 1;
         $startTime = mktime(0, 0, 0, 1, $startDay, 2013);
@@ -703,18 +682,16 @@ class Vocabulary
         }
         return $retNode;
     }
-
-    protected function buildIdString($lang, $name, $note)
-    {
+    
+    protected function buildIdString($lang, $name, $note) {
         return str_replace([
             '"',
             '[',
             ']'
         ], '', sprintf('%s:%s-%s', $lang, $name, $note));
     }
-
-    protected function kanjiParseReading($read)
-    {
+    
+    protected function kanjiParseReading($read) {
         $retList = [];
         if (strlen($read)) {
             // $read = str_replace('.', ' ', $read);
@@ -728,9 +705,8 @@ class Vocabulary
         }
         return $retList;
     }
-
-    protected function kanjiParseSpelling($spell)
-    {
+    
+    protected function kanjiParseSpelling($spell) {
         $retList = [];
         if (preg_match('/Parts: ([^A-Z]+)/', $spell, $match)) {
             $spell = $match[1];
@@ -741,9 +717,8 @@ class Vocabulary
         }
         return $retList;
     }
-
-    protected function kanjiParseTranslation($read)
-    {
+    
+    protected function kanjiParseTranslation($read) {
         $retList = [];
         if (strlen($read)) {
             $tmpList = explode(',', $read);
@@ -756,9 +731,8 @@ class Vocabulary
         }
         return $retList;
     }
-
-    protected function arrayExplode($str)
-    {
+    
+    protected function arrayExplode($str) {
         if (! is_array($str)) {
             $str = strlen($str) ? explode('; ', str_replace([
                 '/',
@@ -788,9 +762,8 @@ class Vocabulary
         }
         return $retList;
     }
-
-    protected function arrayRandomElement(array $randomArr, array $excludeList = [])
-    {
+    
+    protected function arrayRandomElement(array $randomArr, array $excludeList = []) {
         $ret = null;
         $randomCount = count($randomArr);
         if ($randomCount > count($excludeList)) {
@@ -801,9 +774,8 @@ class Vocabulary
         }
         return $ret;
     }
-
-    protected function arrayShuffle(array $list)
-    {
+    
+    protected function arrayShuffle(array $list) {
         shuffle($list);
         return $list;
     }

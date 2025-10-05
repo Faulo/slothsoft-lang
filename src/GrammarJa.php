@@ -7,26 +7,23 @@ use DOMXPath;
 use DOMElement;
 use Exception;
 
-class GrammarJa
-{
-
+class GrammarJa {
+    
     protected $doc;
-
+    
     protected $xpath;
-
+    
     protected $rootNode;
-
+    
     protected $conjugationTypeList;
-
+    
     protected $conjugationBaseList;
-
+    
     protected $conjugationExceptionList;
-
-    public function __construct()
-    {}
-
-    public function init(DOMDocument $grammarDoc)
-    {
+    
+    public function __construct() {}
+    
+    public function init(DOMDocument $grammarDoc) {
         $this->doc = $grammarDoc;
         $this->xpath = new DOMXPath($this->doc);
         $nodeList = $this->xpath->evaluate('.//grammar');
@@ -62,9 +59,8 @@ class GrammarJa
         }
         // my_dump($this->conjugationTypeList);
     }
-
-    public function getConjugationFormList()
-    {
+    
+    public function getConjugationFormList() {
         $ret = [];
         $nodeList = $this->xpath->evaluate('.//conjugation/form', $this->rootNode);
         foreach ($nodeList as $node) {
@@ -72,10 +68,9 @@ class GrammarJa
         }
         return $ret;
     }
-
+    
     // <word name="" note="" id=""/>
-    public function conjugateWord(DOMElement $wordNode)
-    {
+    public function conjugateWord(DOMElement $wordNode) {
         $retNode = null;
         $dataDoc = $wordNode->ownerDocument;
         
@@ -131,9 +126,8 @@ class GrammarJa
         
         return $retNode;
     }
-
-    public function guessConjugationType($kanji, $kana)
-    {
+    
+    public function guessConjugationType($kanji, $kana) {
         $ret = null;
         $nameList = [
             $kana,

@@ -2,11 +2,9 @@
 declare(strict_types = 1);
 namespace Slothsoft\Lang;
 
-abstract class Translator
-{
-
-    public static function getTranslator($sourceLang, $targetLang)
-    {
+abstract class Translator {
+    
+    public static function getTranslator($sourceLang, $targetLang) {
         $sourceLang = trim($sourceLang);
         if (strlen($sourceLang) < 2) {
             throw new \Exception('source language not set!');
@@ -23,24 +21,22 @@ abstract class Translator
         
         return new $class();
     }
-
+    
     protected $otions = [];
-
-    public function setOptions(array $options)
-    {
+    
+    public function setOptions(array $options) {
         foreach ($this->options as $key => $val) {
             if (isset($options[$key])) {
                 $this->options[$key] = $options[$key];
             }
         }
     }
-
+    
     abstract public function translateWord($word, &$nexWord);
-
+    
     abstract protected function getTranslationURL($letters, $pageNo);
-
-    public function createTranslation(array $wordList)
-    {
+    
+    public function createTranslation(array $wordList) {
         return new Translation($this, $wordList);
     }
 }
