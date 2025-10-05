@@ -317,6 +317,8 @@ class Vocabulary {
                 'player' => '"?"'
             ]
         ];
+        
+        $matches = [];
         if (preg_match_all('/[\x{4E00}-\x{9FBF}]/u', $text, $matches)) {
             $matches = array_unique($matches[0]);
             sort($matches);
@@ -341,6 +343,7 @@ class Vocabulary {
                                 $data[$key] = trim($xpath->evaluate($val, $rowNode));
                             }
                             if (isset($data['reading'])) {
+                                $match = [];
                                 if (preg_match('/kun:([^o]+)on:([^J]+)/ui', $data['reading'], $match)) {
                                     $data['kun'] = str_replace('、', ' ', $match[1]);
                                     $data['on'] = str_replace('、', ' ', $match[2]);
@@ -708,6 +711,7 @@ class Vocabulary {
     
     protected function kanjiParseSpelling($spell) {
         $retList = [];
+        $match = [];
         if (preg_match('/Parts: ([^A-Z]+)/', $spell, $match)) {
             $spell = $match[1];
             $tmpList = preg_split('//u', $spell, - 1, PREG_SPLIT_NO_EMPTY);

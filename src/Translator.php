@@ -25,7 +25,7 @@ abstract class Translator {
     protected $otions = [];
     
     public function setOptions(array $options) {
-        foreach ($this->options as $key => $val) {
+        foreach (array_keys($this->options) as $key) {
             if (isset($options[$key])) {
                 $this->options[$key] = $options[$key];
             }

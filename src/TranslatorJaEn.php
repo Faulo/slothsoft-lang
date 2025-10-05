@@ -513,6 +513,7 @@ class TranslatorJaEn extends Translator {
         }
         $ret = $uri;
         if ($targetPath) {
+            $match = [];
             if (preg_match('/kana=(.*)&kanji=(.*)/u', $uri, $match)) {
                 $kana = $match[1];
                 $kanji = $match[2];
@@ -666,6 +667,7 @@ class TranslatorJaEn extends Translator {
                         $kana = str_replace(self::PLAYER_URI_BASE, '', $kana);
                         $nodeList = $tmpPath->evaluate(sprintf('.//script[contains(., "%s")]', $kana));
                         foreach ($nodeList as $node) {
+                            $match = [];
                             if (preg_match('/m\("(.+)"\);/', $node->textContent, $match)) {
                                 $uri = self::PLAYER_URI_BASE . $match[1];
                                 break 2;
