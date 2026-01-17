@@ -11,7 +11,7 @@ use PHPUnit\Framework\TestCase;
  *
  * @todo auto-generated
  */
-class GrammarJaTest extends TestCase {
+final class GrammarJaTest extends TestCase {
     
     public function testClassExists(): void {
         $this->assertTrue(class_exists(GrammarJa::class), "Failed to load class 'Slothsoft\Lang\GrammarJa'!");

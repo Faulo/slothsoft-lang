@@ -11,7 +11,7 @@ use PHPUnit\Framework\TestCase;
  *
  * @todo auto-generated
  */
-class TranslatorStreamTest extends TestCase {
+final class TranslatorStreamTest extends TestCase {
     
     public function testClassExists(): void {
         $this->assertTrue(class_exists(TranslatorStream::class), "Failed to load class 'Slothsoft\Lang\TranslatorStream'!");
