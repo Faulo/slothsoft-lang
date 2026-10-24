@@ -20,6 +20,7 @@ webimage_extra_packages:
     - php${DDEV_PHP_VERSION}-ctype
     - php${DDEV_PHP_VERSION}-curl
     - php${DDEV_PHP_VERSION}-dom
+    - php${DDEV_PHP_VERSION}-fileinfo
     - php${DDEV_PHP_VERSION}-iconv
     - php${DDEV_PHP_VERSION}-mbstring
     - php${DDEV_PHP_VERSION}-phar

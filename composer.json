@@ -11,10 +11,11 @@
     "type": "library",
     "require": {
         "php": ">=7.4",
-        "slothsoft/core": "^1.14.19",
+        "slothsoft/core": "^1.14.21",
         "slothsoft/farah": "^1.27.1"
     },
     "require-dev": {
+        "phpstan/phpstan": "^2.3.2",
         "phpunit/phpunit": "~9.6.34",
         "slothsoft/farah-testing": "^1.3.3"
     },
@@ -36,5 +37,10 @@
             "Slothsoft\\Lang\\": "tests/"
         }
     },
-    "homepage": "http://farah.slothsoft.net/modules/lang"
+    "homepage": "https://faulo.github.io/slothsoft-lang/",
+    "config": {
+        "platform": {
+            "php": "7.4"
+        }
+    }
 }
