@@ -12,7 +12,7 @@ jobs:
         os: [ "ubuntu-24.04", "ubuntu-24.04-arm", "windows-2025" ]
         composer: [ "lowest", "stable" ]
         php: [ "7.4", "8.0", "8.1", "8.2", "8.3", "8.4", "8.5" ]
-        extensions: [ "ctype, curl, dom, fileinfo, filter, iconv, json, libxml, mbstring, pcre, phar, sockets, tokenizer, xml, xmlwriter, xsl, zip, zlib" ]
+        extensions: [ "ctype, curl, dom, fileinfo, filter, iconv, json, libxml, mbstring, pcre, phar, sockets, tokenizer, xmlwriter, xsl, zip, zlib" ]
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v7
@@ -38,8 +38,22 @@ jobs:
           COMPOSER_CACHE_DIR: ${{ runner.temp }}/composer-cache
           COMPOSER_AUTH: "{}"
 
+      - name: Restore Farah Testing data
+        id: farah-testing-data
+        uses: actions/cache/restore@v6
+        with:
+          path: .data/farah-testing
+          key: farah-testing-data-v1-${{ matrix.os }}-${{ runner.arch }}
+
       - name: Run PHPUnit
         run: vendor/bin/phpunit --log-junit results-${{ matrix.os }}-${{ matrix.php }}-${{ matrix.composer }}.xml
+
+      - name: Save Farah Testing data
+        if: always() && steps.farah-testing-data.outputs.cache-hit != 'true' && hashFiles('.data/farah-testing/**/*') != ''
+        uses: actions/cache/save@v6
+        with:
+          path: .data/farah-testing
+          key: farah-testing-data-v1-${{ matrix.os }}-${{ runner.arch }}
 
       - name: Upload Test Results
         if: always()
